@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Use Azure Functions runtime v5 compatibility (adjust if your target runtime requires another version) -->
+    <AzureFunctionsVersion>v5</AzureFunctionsVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Functions isolated worker packages -->
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Sdk" Version="1.11.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="1.16.0" />
+    <PackageReference Include="Microsoft.Azure.Functions.Worker.Extensions.Http" Version="3.0.18" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="host.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
